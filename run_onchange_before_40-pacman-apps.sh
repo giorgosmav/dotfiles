@@ -16,6 +16,7 @@ PACMAN_APPS=(
   xdg-desktop-portal-hyprland
   xdg-utils
   dolphin
+  bitwarden
 
   # --- Audio ---
   pipewire
