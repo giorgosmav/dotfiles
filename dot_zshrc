@@ -103,8 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# command line fuzzy find
-source <(fzf --zsh)
+# command line fuzzy find (fzf)
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
 
 # burp alias
 alias burp='cd /home/zivana/Burpsuite-Professional && ./burpsuitepro'

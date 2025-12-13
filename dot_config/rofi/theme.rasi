@@ -1,0 +1,94 @@
+* {
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    background-color: #1f1f1f;
+    border: 2px;
+    border-color: #5d5d5d;
+    padding: 20;
+    width: 40%;
+}
+
+mainbox {
+    border: 0;
+    padding: 0;
+    background-color: #1f1f1f;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 10;
+    background-color: #272727;
+    border-radius: 12;
+    text-color: #e5e5e5;
+}
+
+prompt {
+    text-color: #e5e5e5;         
+    background-color: transparent;
+    padding: 0;                   
+    border-radius: 0;             
+}
+
+entry {
+    text-color: #e5e5e5;
+    placeholder: "Search…";
+    placeholder-color: #cccccc;
+    background-color: #272727;
+}
+
+listview {
+    columns: 1;
+    lines: 10;
+    spacing: 5;
+    fixed-height: 0;
+    dynamic: true;
+    scrollbar: false;
+    background-color: #1f1f1f;
+}
+
+/* --- List Elements --- */
+
+/* Normal row */
+element-text normal {
+    background-color: #1f1f1f;
+    text-color: #e5e5e5;
+}
+
+/* Selected row */
+element-text selected {
+    background-color: #3b8eea;
+    text-color: #ffffff;
+}
+
+/* Active row (open app) */
+element-text active {
+    background-color: #1f1f1f;
+    text-color: #23d18b;
+}
+
+/* Urgent row */
+element-text urgent {
+    background-color: #1f1f1f;
+    text-color: #f74949;
+}
+
+element-icon {
+    background-color: #1f1f1f;
+    border-radius: 0;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    align: center;
+}
+
+element {
+    background-color: #1f1f1f;  
+    border: 0;                   
+    border-radius: 0;            
+    padding: 0;                  
+    margin: 0;                   
+}

@@ -1,0 +1,5 @@
+[user]
+	name = giorgosmav
+	email = george.mavronicolas@outloook.com.gr
+[pull]
+	rebase = true

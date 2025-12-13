@@ -1,17 +1,28 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-# Arch only
 [[ -f /etc/arch-release ]] || exit 0
-
-echo ">>> Installing base tools"
 
 sudo pacman -Syu --noconfirm
 sudo pacman -S --needed --noconfirm \
+  base \
+  base-devel \
+  linux \
+  linux-headers \
+  linux-firmware \
   git \
   zsh \
   nano \
   curl \
   wget \
   openssh \
-  base-devel
+  man-db \
+  man-pages \
+  pacman-contrib \
+  reflector \
+  chezmoi \
+  fzf \
+  fd \
+  ripgrep \
+  fastfetch \
+  htop \
+  bpytop

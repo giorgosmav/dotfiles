@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+set -euo pipefail
+[[ -f /etc/arch-release ]] || exit 0
+
+PACMAN_APPS=(
+  # --- Hyprland / Wayland ---
+  hyprland
+  hyprlock
+  hyprpaper
+  rofi
+  swaync
+  grim
+  slurp
+  wl-clipboard
+  wlr-randr
+  xdg-desktop-portal-hyprland
+  xdg-utils
+  dolphin
+
+  # --- Audio ---
+  pipewire
+  pipewire-alsa
+  pipewire-pulse
+  pipewire-jack
+  wireplumber
+  pavucontrol
+  alsa-utils
+
+  # --- Networking ---
+  networkmanager
+  networkmanager-openvpn
+  openvpn
+  openresolv
+  iwd
+  inetutils
+  traceroute
+  whois
+  bind
+
+  # --- Bluetooth ---
+  bluez-utils
+  blueman
+
+  # --- CLI / Shell ---
+  zsh
+  nano
+  git
+  fzf
+  fd
+  wget
+  fastfetch
+  htop
+  bpytop
+  rlwrap
+
+  # --- Security / RE / Pentest ---
+  sqlmap
+  nmap
+  tcpdump
+  strace
+  valgrind
+  binwalk
+  checksec
+  radare2
+  rz-cutter
+  pwndbg
+  ropper
+  volatility3
+  impacket
+  perl-image-exiftool
+  ghidra
+
+  # --- Dev / Build ---
+  clang
+  php
+  python-pip
+  rustup
+  zig
+  jdk-openjdk
+  maven
+  docker
+  docker-compose
+  qemu-full
+
+  # --- Filesystems / boot ---
+  efibootmgr
+  dosfstools
+  ntfs-3g
+  exfatprogs
+  os-prober
+
+  # --- Fonts ---
+  ttf-jetbrains-mono-nerd
+  ttf-twemoji
+
+  # --- Misc ---
+  neofetch
+  imagemagick
+  scrot
+  smartmontools
+  zip
+  unzip
+)
+
+sudo pacman -S --needed --noconfirm "${PACMAN_APPS[@]}"
