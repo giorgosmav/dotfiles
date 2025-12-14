@@ -16,7 +16,11 @@ PACMAN_APPS=(
   xdg-desktop-portal-hyprland
   xdg-utils
   dolphin
+<<<<<<< HEAD:run_onchange_before_40-pacman-apps.sh
   bitwarden
+=======
+  sddm
+>>>>>>> 9fcea1e (More scripts and dotfiles):run_onchange_before_40-pacman-apps.sh.tmpl
 
   # --- Audio ---
   pipewire
@@ -92,15 +96,25 @@ PACMAN_APPS=(
 
   # --- Fonts ---
   ttf-jetbrains-mono-nerd
-  ttf-twemoji
+  # ttf-twemoji
 
   # --- Misc ---
-  neofetch
+  # neofetch
   imagemagick
   scrot
   smartmontools
   zip
   unzip
+
+  # --- NVIDIA (official) ---
+  {{ if .hasNvidia }}
+    nvidia-dkms
+    nvidia-utils
+    nvidia-settings
+    nvidia-prime
+    lib32-nvidia-utils
+  {{ end }}
+
 )
 
 sudo pacman -S --needed --noconfirm "${PACMAN_APPS[@]}"

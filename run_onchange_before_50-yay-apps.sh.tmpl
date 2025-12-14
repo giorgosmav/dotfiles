@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# If yay is missing or broken, skip safely
+if ! command -v yay >/dev/null 2>&1; then
+  echo "yay not found, skipping AUR apps"
+  exit 0
+fi
+
+if ! yay --version >/dev/null 2>&1; then
+  echo "yay is broken, skipping AUR apps"
+  exit 0
+fi
+
+AUR_APPS=(
+  # --- UI / Wayland ---
+  ags-hyprpanel-git
+  aylurs-gtk-shell-git
+  appmenu-glib-translator-git
+
+  # --- Rofi / clipboard ---
+  clipse
+  clipse-gui
+  clipman
+
+  # --- Browsers / GUI ---
+  brave-nightly-bin
+  visual-studio-code-bin
+  flameshot-git
+  windsurf
+
+  # --- Dev / DB ---
+  msodbcsql
+  mssql-tools
+  php-pdo_sqlsrv
+  php-sqlsrv
+  jdk22-graalvm-bin
+
+  # --- Fonts ---
+  ttf-twemoji
+
+  # --- Misc ---
+  localxpose
+  rar
+  swaylock-effects
+
+  {{ if .hasNvidia }}
+    opencl-nvidia-tkg
+    lib32-opencl-nvidia-tkg
+  {{ end }}
+
+)
+
+yay -S --needed --noconfirm "${AUR_APPS[@]}"
